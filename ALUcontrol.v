@@ -1,28 +1,23 @@
 `timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
+// Company: Rose-Hulman CSSE dept. (student)
+// Engineer: Thomas Bonatti
 // 
-// Create Date:    16:35:32 01/27/2015 
+// Create Date:   01/27/2015 
 // Design Name: 
-// Module Name:    ALUcontrol 
-// Project Name: 
-// Target Devices: 
-// Tool versions: 
-// Description: 
+// Module Name:    ALU16bit 
+// Project Name: 	csse232 comp arc final project (team B)
 //
-// Dependencies: 
-//
-// Revision: 
-// Revision 0.01 - File Created
-// Additional Comments: 
 //
 //////////////////////////////////////////////////////////////////////////////////
-module ALUcontrol(op, func
+module ALUcontrol(op, func, reset, ALUop
     );
-	 
+	
+	input reset;
 	input [3:0] op, func;
 	output reg [3:0] ALUop;
+	
+	always @(posedge reset) ALUop = 0;
 	
 	always @(op, func) begin
 		if (op == 0) begin
@@ -36,11 +31,11 @@ module ALUcontrol(op, func
 				'b0101: ALUop <= 'b0000; // unused --> XXXX
 				'b0110: ALUop <= 'b0000; // copy --> XXXX
 				'b0111: ALUop <= 'b0000; // jr --> XXXX
+				'b1001: ALUop <= 'b1111; // slt
+				'b1010: ALUop <= 'b1110; // brqz --> eq0
+				'b1011: ALUop <= 'b1110; // bnez --> eq0
+				
 				'b1000: ALUop <= 'b0000; // unused --> XXXX
-				'b1000: ALUop <= 'b1111; // slt
-				'b1001: ALUop <= 'b1110; // brqz --> eq0
-				'b1010: ALUop <= 'b1110; // bnez --> eq0
-				'b1011: ALUop <= 'b0000; // unused --> XXXX
 				'b1100: ALUop <= 'b0000; // unused --> XXXX
 				'b1101: ALUop <= 'b0000; // unused --> XXXX
 				'b1110: ALUop <= 'b0000; // unused --> XXXX
@@ -52,21 +47,21 @@ module ALUcontrol(op, func
 		else begin
 			case (op)
 			
-			'b0001: ALUop <= 'b0000; // addi --> add
-			'b0010: ALUop <= 'b0111; // beq --> sub
-			'b0011: ALUop <= 'b0111; // bne --> sub
-			'b0100: ALUop <= 'b0000; // jump --> XXXX
-			'b0101: ALUop <= 'b0000; // lw --> add
-			'b0110: ALUop <= 'b0000; // sw --> add
-			'b0111: ALUop <= 'b0000; // unused????
-			'b1000: ALUop <= 'b0000; // li --> XXXX
-			'b1001: ALUop <= 'b0001; // ori --> or
-			'b1010: ALUop <= 'b0011; // andi --> and
-			'b1011: ALUop <= 'b0100; // nori --> nor
-			'b1100: ALUop <= 'b0101; // sll --> <<
-			'b1101: ALUop <= 'b0110; // srl --> >>
-			'b1110: ALUop <= 'b0000; // sra --> ???
-			'b1111: ALUop <= 'b1111; // slti --> slt
+				'b0001: ALUop <= 'b0000; // addi --> add
+				'b0010: ALUop <= 'b0111; // beq --> sub
+				'b0011: ALUop <= 'b0111; // bne --> sub
+				'b0100: ALUop <= 'b0000; // jump --> XXXX
+				'b0101: ALUop <= 'b0000; // lw --> add
+				'b0110: ALUop <= 'b0000; // sw --> add
+				'b0111: ALUop <= 'b0000; // unused????
+				'b1000: ALUop <= 'b0000; // li --> XXXX
+				'b1001: ALUop <= 'b0001; // ori --> or
+				'b1010: ALUop <= 'b0011; // andi --> and
+				'b1011: ALUop <= 'b0100; // nori --> nor
+				'b1100: ALUop <= 'b0101; // sll --> <<
+				'b1101: ALUop <= 'b0110; // srl --> >>
+				'b1110: ALUop <= 'b0000; // sra --> ???
+				'b1111: ALUop <= 'b1111; // slti --> slt
 			
 			endcase
 		end
