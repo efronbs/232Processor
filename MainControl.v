@@ -26,7 +26,7 @@ module MainControl(op, func, reset, CLK);
 	input reset;
 	input CLK;
 	output branch;
-	output jump;
+	output jump[1:0]; // 00 default, 01 jumping, 10 jr
 
 	output PCwrt;
 	output IRwrt;
@@ -40,7 +40,7 @@ module MainControl(op, func, reset, CLK);
 	output wAdrs;
 	output wDat [1:0]; // AiA- 00   ALUout- 01  imm- 10  memOut- 11
 	output memAdrsSlct;
-	output imOrR;
+	output imOrR[1:0]; // 00 r2out, 01 Sign Ext, 10 PC+1
 	output immSlct;
 	
 	output BNEoBEQ; // 0 if BEQ, 1 if BNE
@@ -51,7 +51,7 @@ module MainControl(op, func, reset, CLK);
 	// reset all signals to 0
 	always @	(reset) begin
 		branch = 0;
-		jump = 0;
+		jump = 'b00;
 
 		PCwrt = 0;
 		IRwrt = 0;
@@ -63,9 +63,9 @@ module MainControl(op, func, reset, CLK);
 		memWrt = 0;
 
 		wAdrs = 0;
-		wDat = 0;
+		wDat = 'b00;
 		memAdrsSlct = 0;
-		imOrR = 0;
+		imOrR = 'b00;
 		immSlct = 0;
 
 		BNEoBEQ=0;
@@ -83,34 +83,10 @@ module MainControl(op, func, reset, CLK);
 		// in the FETCH state, get the op/func code, and determine the next state from that.
 		// while not in FETCH, the states are just a series of steps to complete an instruction, so nextState is basred on currentState
 			
-			if (op == 0) begin
-				if (func == 'b0111){
-					//jr code
-				}else if (func == 'b0110'){
-					//copy code
-					nextState = '0b01111';
-				}else{
-					nextState = '0b10001';
-				}
-				/*case(func)
-				// R-type instructions
-					'b0000: //add
-					'b0001: //and (logic)
-					'b0010: //or (logic)
-					'b0011: //xor (logic)
-					'b0100: //nor (logic)
-					'b0101: //--empty--
-					'b0110: //copy
-					'b0111: //jr
-					'b1000: //move
-					'b1001: //slt (set less than)
-					'b1010: //sub (subtract)
-					'b1011: //brqz (branch if zero)
-					'b1100: //bnez (branch if not zero)
-					'b1101: //--empty--
-					'b1110: //--empty--
-					'b1111: //--empty--
-				endcase	*/	
+			if (op == 0) begin // R types
+				if (func == 'b0111) nextState <= 22; //jr code					
+				else if (func == 'b0110) nextState = 'b01111;//copy code					
+				else nextState = 'b10001;
 			end
 			
 			else begin // if op is not 0, use op code to determine the instruction
@@ -149,6 +125,7 @@ module MainControl(op, func, reset, CLK);
 				'b10000:		nextState = 0; // end of copy
 				'b10011:		nextState = 0; // end of R-Type
 				'b10101:		nextState = 0;	//	end bne
+				'b11000:		nextState = 0; //end of jr
 				default: 	nextState = currentState + 1; // otherwise, move to next state in thread
 		
 			endcase
@@ -162,7 +139,7 @@ module MainControl(op, func, reset, CLK);
 		
 			'b00000:	begin // FETCH
 						branch <= 0;
-						jump <= 0;
+						jump <= 'b00;
 						PCwrt <= 1;
 						IRwrt <= 1;
 						memOWrt <= 0;
@@ -172,24 +149,25 @@ module MainControl(op, func, reset, CLK);
 						regWrt <= 0;
 						memWrt <= 0;
 						wAdrs <= 0;
-						wDat <= 0;
+						wDat <= 'b00;
 						memAdrsSlct <= 0;
-						imOrR <= 0;
+						imOrR <= 'b00;
 						immSlct <= 0;
 					end // end Fetch
 			'b00001: begin // begin I type
-						Awrt = 1; Bwrt = 1; imOrR = 1;
+						Awrt = 1; Bwrt = 1; imOrR = 'b01;
 			end
 			'b00010: begin
-						Awrt = 0; Bwrt = 0; imOrR = 0;
+						Awrt = 0; Bwrt = 0; imOrR = 'b00;
 						ALUwrt = 1;
 			end
 			'b00011: begin 
 						ALUwrt = 0;
-						regWrt = 1; // TODO wDat = ALUout;
+						regWrt = 1; 
+						wDat = 'b01;
 			end // end I type
 			'b00100: begin // begin jump
-						jump = 1;
+						jump = 'b01;
 			end // end jump
 			'b00101: begin // begin beq
 						Awrt = 1;
@@ -206,12 +184,12 @@ module MainControl(op, func, reset, CLK);
 			'b00111: begin // begin lw
 						Awrt = 1;
 						Bwrt = 1;
-						ior = 1;
+						imOrR = 'b01;
 			end
 			'b01000: begin
 						Awrt = 0;
 						Bwrt = 0;
-						ior = 0;
+						imOrR = 'b00;
 						ALUwrt = 1;
 			end
 			'b01001: begin
@@ -221,18 +199,18 @@ module MainControl(op, func, reset, CLK);
 			'b01010: begin
 						memADrsSlct = 0;
 						regWrite = 1;
-						wDat =  ;// TODO decide wDat setup
+						wDat =  'b00;
 						memOut = 1;
 			end // end lw
 			'b01011: begin // begin sw
 						Awrt = 1;
 						Bwrt = 1;
-						ior = 1;
+						imOrR = 'b01;
 			end
 			'b01100: begin
 						Awrt = 0;
 						Bwrt = 0;
-						ior = 0;
+						imOrR = 'b00;
 						ALUwrt = 1;
 			end
 			'b01101: begin
@@ -242,8 +220,8 @@ module MainControl(op, func, reset, CLK);
 			end // end sw
 			'b01110: begin // begin li
 						regWrt = 1;
-						wDat = ; // TODO decide wDat setup
-						//TODO SE[Imm]   I don't know what this is
+						wDat = 'b11; 
+						
 			end // end li
 			'b01111: begin // begin copy
 						useReg = 1;
@@ -253,7 +231,7 @@ module MainControl(op, func, reset, CLK);
 						useReg = 0;
 						Awrt = 0;
 						regWrt = 1;
-						wDat = ; // TODO AiA
+						wDat = 'b10;
 			end // end copy
 			'b10001: begin // begin r type
 						Awrt = 1;
@@ -269,7 +247,7 @@ module MainControl(op, func, reset, CLK);
 			'b10011: begin
 						ALUwrt = 0;
 						regWrt = 1;
-						wDat = ; // TODO decide wDat setup
+						wDat = 'b01;
 						ALUout = 1;
 			end // end r type
 			'b10100: begin // begin bne
@@ -284,12 +262,22 @@ module MainControl(op, func, reset, CLK);
 						branch = 1;
 						BNEoBEQ = 1;
 			end // end bne
-			'b10110: begin
+			'b10110: begin // begin jr
+						Awrt = 1;
+						Bwrt = 1;
+						imOrR = 'b10;
+						
 			end
 			'b10111: begin
+						Awrt = 0;
+						Bwrt = 0;
+						imOrR =  'b00;
+						ALUwrt = 1;
 			end
 			'b11000: begin
-			end
+						ALUwrt = 0;
+						jump = 'b10;
+			end // end jr
 			'b01001: begin
 			end
 			'b11010: begin
