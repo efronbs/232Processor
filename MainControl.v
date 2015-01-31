@@ -20,31 +20,31 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module MainControl(op, func, reset, CLK);
-	input [3:0] op;
-	input [3:0] func;
-	input reset;
-	input CLK;
-	output branch;
-	output jump[1:0]; // 00 default, 01 jumping, 10 jr
+module MainControl(
+	input [3:0] op,
+	input [3:0] func,
+	input reset,
+	input CLK,
+	output branch,
+	output jump[1:0], // 00 default, 01 jumping, 10 jr
 
-	output PCwrt;
-	output IRwrt;
-	output memOWrt;
-	output Awrt;
-	output Bwrt;
-	output ALUwrt;
-	output regWrt;
-	output memWrt;
+	output PCwrt,
+	output IRwrt,
+	output memOWrt,
+	output Awrt,
+	output Bwrt,
+	output ALUwrt,
+	output regWrt,
+	output memWrt,
 
-	output wAdrs;
-	output wDat [1:0]; // AiA- 00   ALUout- 01  imm- 10  memOut- 11
-	output memAdrsSlct;
-	output imOrR[1:0]; // 00 r2out, 01 Sign Ext, 10 PC+1
-	output immSlct;
+	output wAdrs,
+	output wDat [1:0], // AiA- 00   ALUout- 01  imm- 10  memOut- 11
+	output memAdrsSlct,
+	output imOrR[1:0], // 00 r2out, 01 Sign Ext, 10 PC+1
+	output immSlct,
 	
-	output BNEoBEQ; // 0 if BEQ, 1 if BNE
-	
+	output BNEoBEQ // 0 if BEQ, 1 if BNE
+	);
 	reg currentState [4:0];
 	reg nextState [4:0];
 	
