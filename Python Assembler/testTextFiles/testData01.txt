@@ -1,0 +1,8 @@
+addi 10
+add $m, $sp
+bne $t0, 100
+beq $t0, 101
+ori 15
+or $m, $t0
+j 311
+jr $m
