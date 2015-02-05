@@ -55,7 +55,7 @@ module ALUtester;
 		// Wait 100 ns for global reset to finish
 		#100;
 		reset = 1; #5; reset = 0;
-		/*
+		
 		aluOp = 'b0000; // ADD
 		aIn = 0; bIn = 0; expected = 0; #15;
 		aIn = 1; bIn = 1; expected = 2; #15;	  
@@ -105,7 +105,7 @@ module ALUtester;
 		aIn = 'b1100110011001100; bIn = 'b0011001100110011; expected = 'b0000000000000000; #15;
 		aIn = 'b1110001110001110; bIn = 'b0011001100110011; expected = 'b0000110001000000; #15;
 		aIn = 'b1110001110001110; bIn = 'b0011001100110011; expected = 'b0000110001000000; #15;
-		*/
+		
 		aluOp = 'b0101; // SLL 
 		aIn = 'b0000000000000000; bIn = 0; expected = 'b0000000000000000; #15;
 		aIn = 'b0000000000000000; bIn = 1; expected = 'b0000000000000000; #15;

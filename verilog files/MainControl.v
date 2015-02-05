@@ -84,8 +84,9 @@ module MainControl(
 		// while not in FETCH, the states are just a series of steps to complete an instruction, so nextState is basred on currentState
 			
 			if (op == 0) begin // R types
-				if (func == 'b0111) nextState <= 22; //jr code					
-				else if (func == 'b0110) nextState = 'b01111;//copy code					
+				if (func == 'b0111) nextState <= 'b10100; //jr code					
+				else if (func == 'b0110) nextState = 'b01111;//copy code	
+				else if (func == 'b1001) nextState = 'b10110; // slt 
 				else nextState = 'b10001;
 			end
 			
@@ -125,7 +126,8 @@ module MainControl(
 				'b10000:		nextState = 0; // end of copy
 				'b10011:		nextState = 0; // end of R-Type
 				'b10101:		nextState = 0;	//	end bne
-				'b11000:		nextState = 0; //end of jr
+				'b11000:		nextState = 0; // end of jr
+				'b10110:		nextState = 0; // end of slt
 				default: 	nextState = currentState + 1; // otherwise, move to next state in thread
 		
 			endcase
@@ -250,34 +252,27 @@ module MainControl(
 						wDat = 'b01;
 						ALUout = 1;
 			end // end r type
-			'b10100: begin // begin bne
+			
+			'b10100: begin  // begin jr
 						Awrt = 1;
-						Bwrt = 1;
-						useFirstReg = 1;
+						useReg = 1;
 			end
-			'b10101: begin 
-						Awrt = 0;
-						Bwrt = 0;
-						useFirstReg = 0;
-						branch = 1;
-						BNEoBEQ = 1;
-			end // end bne
-			'b10110: begin // begin jr
-						Awrt = 1;
-						Bwrt = 1;
-						imOrR = 'b10;
-						
+			'b10101: begin
+						jump = 'b10;
+			end // end jr	
+			
+			'b10110: begin // begin set less than
+				Awrt = 1;
+				Bwrt = 1;
 			end
 			'b10111: begin
-						Awrt = 0;
-						Bwrt = 0;
-						imOrR =  'b00;
-						ALUwrt = 1;
+				ALUwrt = 1;
 			end
 			'b11000: begin
-						ALUwrt = 0;
-						jump = 'b10;
-			end // end jr
+				regWrite = 1;
+				wDat = 'b00;
+			end // end set less than
+			
 			'b01001: begin
 			end
 			'b11010: begin
