@@ -25,33 +25,39 @@ module MainControl(
 	input [3:0] func,
 	input reset,
 	input CLK,
-	output branch,
-	output jump[1:0], // 00 default, 01 jumping, 10 jr
+	output reg branch,
+	output reg jump, // 00 default, 01 jumping, 10 jr
 
-	output PCwrt,
-	output IRwrt,
-	output memOWrt,
-	output Awrt,
-	output Bwrt,
-	output ALUwrt,
-	output regWrt,
-	output memWrt,
+	output reg useFirstReg,
+	output reg useReg,
 
-	output wAdrs,
-	output wDat [1:0], // AiA- 00   ALUout- 01  imm- 10  memOut- 11
-	output memAdrsSlct,
-	output imOrR[1:0], // 00 r2out, 01 Sign Ext, 10 PC+1
-	output immSlct,
+	output reg PCwrt,
+	output reg IRwrt,
+	output reg memOWrt,
+	output reg Awrt,
+	output reg Bwrt,
+	output reg ALUwrt,
+	output reg regWrt,
+	output reg memWrt,
+
+	output reg wAdrs,
+	output reg [1:0] wDat, // AiA- 00   ALUout- 01  imm- 10  memOut- 11
+	output reg memAdrsSlct,
+	output reg [1:0] imOrR, // 00 r2out, 01 Sign Ext, 10 PC+1
+	output reg immSlct,
 	
-	output BNEoBEQ // 0 if BEQ, 1 if BNE
+	output reg BNEoBEQ // 0 if BEQ, 1 if BNE
 	);
-	reg currentState [4:0];
-	reg nextState [4:0];
+	reg [4:0] currentState;
+	reg [4:0] nextState;
 	
 	// reset all signals to 0
 	always @	(reset) begin
 		branch = 0;
 		jump = 'b00;
+
+		useReg = 0;
+		useFirstReg = 0;
 
 		PCwrt = 0;
 		IRwrt = 0;
@@ -67,6 +73,9 @@ module MainControl(
 		memAdrsSlct = 0;
 		imOrR = 'b00;
 		immSlct = 0;
+		
+		currentState = 0;
+		nextState = 0;
 
 		BNEoBEQ=0;
 	end
@@ -196,13 +205,13 @@ module MainControl(
 			end
 			'b01001: begin
 						ALUwrt = 0;
-						memADrsSlct = 1;
+						memAdrsSlct = 1;
 			end
 			'b01010: begin
-						memADrsSlct = 0;
-						regWrite = 1;
+						memAdrsSlct = 0;
+						regWrt = 1;
 						wDat =  'b00;
-						memOut = 1;
+						memOWrt = 1;
 			end // end lw
 			'b01011: begin // begin sw
 						Awrt = 1;
@@ -250,7 +259,6 @@ module MainControl(
 						ALUwrt = 0;
 						regWrt = 1;
 						wDat = 'b01;
-						ALUout = 1;
 			end // end r type
 			
 			'b10100: begin  // begin jr
@@ -269,7 +277,7 @@ module MainControl(
 				ALUwrt = 1;
 			end
 			'b11000: begin
-				regWrite = 1;
+				regWrt = 1;
 				wDat = 'b00;
 			end // end set less than
 			
