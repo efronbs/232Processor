@@ -1,0 +1,35 @@
+////////////////////////////////////////////////////////////////////////////////
+// Copyright (c) 1995-2011 Xilinx, Inc.  All rights reserved.
+////////////////////////////////////////////////////////////////////////////////
+//   ____  ____ 
+//  /   /\/   / 
+// /___/  \  /    Vendor: Xilinx 
+// \   \   \/     Version : 13.4
+//  \   \         Application : sch2hdl
+//  /   /         Filename : PCAdder_Schematic.vf
+// /___/   /\     Timestamp : 02/12/2015 18:59:00
+// \   \  /  \ 
+//  \___\/\___\ 
+//
+//Command: sch2hdl -intstyle ise -family spartan3e -verilog C:/Users/humphrjm/Documents/Xilinx/232FinalProject/FinalProject/PCAdder_Schematic.vf -w C:/Users/humphrjm/Documents/Xilinx/232FinalProject/FinalProject/PCAdder_Schematic.sch
+//Design Name: PCAdder_Schematic
+//Device: spartan3e
+//Purpose:
+//    This verilog netlist is translated from an ECS schematic.It can be 
+//    synthesized and simulated, but it should not be modified. 
+//
+`timescale 1ns / 1ps
+
+module PCAdder_Schematic(XLXN_11, 
+                         XLXN_12);
+
+    input [15:0] XLXN_11;
+   output [15:0] XLXN_12;
+   
+   wire [15:0] XLXN_10;
+   
+   adder16bit  XLXI_4 (.aIn(XLXN_10[15:0]), 
+                      .bIn(XLXN_11[15:0]), 
+                      .outPin(XLXN_12[15:0]));
+   PCadderConstant  XLXI_5 (.constantOne(XLXN_10[15:0]));
+endmodule

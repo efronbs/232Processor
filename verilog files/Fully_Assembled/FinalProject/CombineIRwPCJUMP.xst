@@ -1,0 +1,5 @@
+set -tmpdir "C:/Users/humphrjm/Documents/Xilinx/232FinalProject/FinalProject/xst/projnav.tmp"
+set -xsthdpdir "C:/Users/humphrjm/Documents/Xilinx/232FinalProject/FinalProject/xst"
+elaborate
+-ifn CombineIRwPCJUMP.prj
+-ifmt mixed

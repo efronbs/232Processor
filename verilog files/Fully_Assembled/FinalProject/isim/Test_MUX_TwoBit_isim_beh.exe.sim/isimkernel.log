@@ -1,0 +1,28 @@
+Command line:
+   Test_MUX_TwoBit_isim_beh.exe
+     -simmode  gui
+     -simrunnum  0
+     -socket  55334
+
+Fri Feb 13 03:48:44 2015
+
+
+ Elaboration Time: 0.0156 sec
+
+ Current Memory Usage: 829.239 Meg
+
+ Total Signals          : 19
+ Total Nets             : 95
+ Total Signal Drivers   : 11
+ Total Blocks           : 3
+ Total Primitive Blocks : 2
+ Total Processes        : 14
+ Total Traceable Variables  : 24
+ Total Scalar Nets and Variables : 257
+
+ Total Simulation Time: 0.0156 sec
+
+ Current Memory Usage: 829.239 Meg
+
+Fri Feb 13 03:48:56 2015
+

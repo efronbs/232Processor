@@ -1,0 +1,12 @@
+[Inputs]
+=in1[2:0]=
+=in2[2:0]=
+=in3[2:0]=
+=in4[2:0]=
+=ctrlSlct[1:0]=
+[Outputs]
+=muxOut[2:0]=
+[BiDir]
+[ATTRIBUTES]
+VeriModel MUX_TwoBit_3
+

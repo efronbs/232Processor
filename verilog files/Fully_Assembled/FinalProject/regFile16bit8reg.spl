@@ -1,0 +1,16 @@
+[Inputs]
+clk
+regWrt
+reset
+=r1[2:0]=
+=r2[2:0]=
+=wDest[2:0]=
+=wDat[15:0]=
+[Outputs]
+=r1out[15:0]=
+=r2out[15:0]=
+=m[15:0]=
+[BiDir]
+[ATTRIBUTES]
+VeriModel regFile16bit8reg
+

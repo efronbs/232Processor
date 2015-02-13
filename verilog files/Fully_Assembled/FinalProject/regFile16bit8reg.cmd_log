@@ -1,0 +1,6 @@
+vhdtdtfi -lib work C:/Users/humphrjm/Documents/Xilinx/232FinalProject/FinalProject/regFile16bit8reg.v -lang verilog -prj FinalProject -o regFile16bit8reg.spl -module regFile16bit8reg -template C:/Xilinx/13.4/ISE_DS/ISE//data/splveri.tft -deleteonerror 
+spl2sym -intstyle ise -family spartan3e -w regFile16bit8reg.spl C:/Users/humphrjm/Documents/Xilinx/232FinalProject/FinalProject/regFile16bit8reg.sym 
+vhdtdtfi -lib work C:/Users/humphrjm/Documents/Xilinx/232FinalProject/FinalProject/regFile16bit8reg.v -lang verilog -prj FinalProject -o regFile16bit8reg.spl -module regFile16bit8reg -template C:/Xilinx/13.4/ISE_DS/ISE//data/splveri.tft -deleteonerror 
+spl2sym -intstyle ise -family spartan3e -w regFile16bit8reg.spl C:/Users/humphrjm/Documents/Xilinx/232FinalProject/FinalProject/regFile16bit8reg.sym 
+vhdtdtfi -lib work C:/Users/humphrjm/Documents/Xilinx/232FinalProject/FinalProject/regFile16bit8reg.v -lang verilog -prj FinalProject -o regFile16bit8reg.spl -module regFile16bit8reg -template C:/Xilinx/13.4/ISE_DS/ISE//data/splveri.tft -deleteonerror 
+spl2sym -intstyle ise -family spartan3e -w regFile16bit8reg.spl C:/Users/humphrjm/Documents/Xilinx/232FinalProject/FinalProject/regFile16bit8reg.sym 

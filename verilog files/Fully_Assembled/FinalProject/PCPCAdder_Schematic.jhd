@@ -1,0 +1,5 @@
+MODULE PCPCAdder_Schematic
+	SUBMODULE PCAdder_Schematic
+		INSTANCE XLXI_1
+	SUBMODULE register16bit
+		INSTANCE XLXI_2

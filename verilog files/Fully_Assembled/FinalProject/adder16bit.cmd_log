@@ -1,0 +1,6 @@
+vhdtdtfi -lib work C:/Users/humphrjm/Documents/Xilinx/232FinalProject/FinalProject/adder16bit.v -lang verilog -prj FinalProject -o adder16bit.spl -module adder16bit -template C:/Xilinx/13.4/ISE_DS/ISE//data/splveri.tft -deleteonerror 
+spl2sym -intstyle ise -family spartan3e adder16bit.spl C:/Users/humphrjm/Documents/Xilinx/232FinalProject/FinalProject/adder16bit.sym 
+vhdtdtfi -lib work C:/Users/humphrjm/Documents/Xilinx/232FinalProject/FinalProject/adder16bit.v -lang verilog -prj FinalProject -o adder16bit.spl -module adder16bit -template C:/Xilinx/13.4/ISE_DS/ISE//data/splveri.tft -deleteonerror 
+spl2sym -intstyle ise -family spartan3e adder16bit.spl C:/Users/humphrjm/Documents/Xilinx/232FinalProject/FinalProject/adder16bit.sym 
+vhdtdtfi -lib work C:/Users/humphrjm/Documents/Xilinx/232FinalProject/FinalProject/adder16bit.v -lang verilog -prj FinalProject -o adder16bit.spl -module adder16bit -template C:/Xilinx/13.4/ISE_DS/ISE//data/splveri.tft -deleteonerror 
+spl2sym -intstyle ise -family spartan3e adder16bit.spl C:/Users/humphrjm/Documents/Xilinx/232FinalProject/FinalProject/adder16bit.sym 

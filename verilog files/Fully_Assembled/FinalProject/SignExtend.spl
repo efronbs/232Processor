@@ -1,0 +1,12 @@
+[Inputs]
+CLK
+reset
+imSlct
+=in1[11:0]=
+=in2[9:0]=
+[Outputs]
+=outExtend[15:0]=
+[BiDir]
+[ATTRIBUTES]
+VeriModel SignExtend
+

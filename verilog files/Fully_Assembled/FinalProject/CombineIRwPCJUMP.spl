@@ -1,0 +1,9 @@
+[Inputs]
+=irIN[15:0]=
+=pcIN[15:0]=
+[Outputs]
+=jumpAddrOUT[15:0]=
+[BiDir]
+[ATTRIBUTES]
+VeriModel CombineIRwPCJUMP
+

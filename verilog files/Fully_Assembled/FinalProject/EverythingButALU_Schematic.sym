@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<symbol version="7" name="EverythingButALU_Schematic">
+    <symboltype>BLOCK</symboltype>
+    <timestamp>2015-2-13T9:53:32</timestamp>
+    <pin polarity="Input" x="0" y="-1312" name="BWrtCTRL" />
+    <pin polarity="Input" x="0" y="-1248" name="AWrtCTRL" />
+    <pin polarity="Input" x="0" y="-1184" name="ALUOpCTRL(3:0)" />
+    <pin polarity="Input" x="0" y="-1120" name="ImSlctCTRL" />
+    <pin polarity="Input" x="0" y="-1056" name="CLK" />
+    <pin polarity="Input" x="0" y="-992" name="RESET" />
+    <pin polarity="Input" x="0" y="-928" name="MemAdrsSlctCTRL" />
+    <pin polarity="Input" x="0" y="-864" name="MemWCTRL" />
+    <pin polarity="Input" x="0" y="-800" name="PCWrtCTRL" />
+    <pin polarity="Input" x="0" y="-736" name="JumpCTRL" />
+    <pin polarity="Input" x="0" y="-672" name="iorCTRL" />
+    <pin polarity="Input" x="0" y="-608" name="RegWrtCTRL" />
+    <pin polarity="Input" x="0" y="-544" name="MemOWCTRL" />
+    <pin polarity="Input" x="0" y="-480" name="IRwrtCTRL" />
+    <pin polarity="Input" x="0" y="-416" name="useRegCTRL" />
+    <pin polarity="Input" x="0" y="-352" name="useFirstRegCTRL" />
+    <pin polarity="Input" x="0" y="-288" name="wAdrsCTRL" />
+    <pin polarity="Input" x="0" y="-224" name="wDatCTRL(1:0)" />
+    <pin polarity="Input" x="0" y="-160" name="BEQoBNECTRL" />
+    <pin polarity="Input" x="0" y="-96" name="BranchCTRL" />
+    <pin polarity="Input" x="0" y="-32" name="ALUwrtCTRL" />
+    <pin polarity="Output" x="512" y="-1312" name="MemDatOut(15:0)" />
+    <graph>
+        <rect width="384" x="64" y="-1344" height="1344" />
+        <attrtext style="alignment:BCENTER;fontsize:56;fontname:Arial" attrname="SymbolName" x="256" y="-1352" type="symbol" />
+        <attrtext style="fontsize:24;fontname:Arial" attrname="PinName" x="72" y="-1312" type="pin BWrtCTRL" />
+        <line x2="0" y1="-1312" y2="-1312" x1="64" />
+        <attrtext style="fontsize:24;fontname:Arial" attrname="PinName" x="72" y="-1248" type="pin AWrtCTRL" />
+        <line x2="0" y1="-1248" y2="-1248" x1="64" />
+        <attrtext style="fontsize:24;fontname:Arial" attrname="PinName" x="72" y="-1184" type="pin ALUOpCTRL(3:0)" />
+        <rect width="64" x="0" y="-1196" height="24" />
+        <line x2="0" y1="-1184" y2="-1184" x1="64" />
+        <attrtext style="fontsize:24;fontname:Arial" attrname="PinName" x="72" y="-1120" type="pin ImSlctCTRL" />
+        <line x2="0" y1="-1120" y2="-1120" x1="64" />
+        <attrtext style="fontsize:24;fontname:Arial" attrname="PinName" x="72" y="-1056" type="pin CLK" />
+        <line x2="0" y1="-1056" y2="-1056" x1="64" />
+        <attrtext style="fontsize:24;fontname:Arial" attrname="PinName" x="72" y="-992" type="pin RESET" />
+        <line x2="0" y1="-992" y2="-992" x1="64" />
+        <attrtext style="fontsize:24;fontname:Arial" attrname="PinName" x="72" y="-928" type="pin MemAdrsSlctCTRL" />
+        <line x2="0" y1="-928" y2="-928" x1="64" />
+        <attrtext style="fontsize:24;fontname:Arial" attrname="PinName" x="72" y="-864" type="pin MemWCTRL" />
+        <line x2="0" y1="-864" y2="-864" x1="64" />
+        <attrtext style="fontsize:24;fontname:Arial" attrname="PinName" x="72" y="-800" type="pin PCWrtCTRL" />
+        <line x2="0" y1="-800" y2="-800" x1="64" />
+        <attrtext style="fontsize:24;fontname:Arial" attrname="PinName" x="72" y="-736" type="pin JumpCTRL" />
+        <line x2="0" y1="-736" y2="-736" x1="64" />
+        <attrtext style="fontsize:24;fontname:Arial" attrname="PinName" x="72" y="-672" type="pin iorCTRL" />
+        <line x2="0" y1="-672" y2="-672" x1="64" />
+        <attrtext style="fontsize:24;fontname:Arial" attrname="PinName" x="72" y="-608" type="pin RegWrtCTRL" />
+        <line x2="0" y1="-608" y2="-608" x1="64" />
+        <attrtext style="fontsize:24;fontname:Arial" attrname="PinName" x="72" y="-544" type="pin MemOWCTRL" />
+        <line x2="0" y1="-544" y2="-544" x1="64" />
+        <attrtext style="fontsize:24;fontname:Arial" attrname="PinName" x="72" y="-480" type="pin IRwrtCTRL" />
+        <line x2="0" y1="-480" y2="-480" x1="64" />
+        <attrtext style="fontsize:24;fontname:Arial" attrname="PinName" x="72" y="-416" type="pin useRegCTRL" />
+        <line x2="0" y1="-416" y2="-416" x1="64" />
+        <attrtext style="fontsize:24;fontname:Arial" attrname="PinName" x="72" y="-352" type="pin useFirstRegCTRL" />
+        <line x2="0" y1="-352" y2="-352" x1="64" />
+        <attrtext style="fontsize:24;fontname:Arial" attrname="PinName" x="72" y="-288" type="pin wAdrsCTRL" />
+        <line x2="0" y1="-288" y2="-288" x1="64" />
+        <attrtext style="fontsize:24;fontname:Arial" attrname="PinName" x="72" y="-224" type="pin wDatCTRL(1:0)" />
+        <rect width="64" x="0" y="-236" height="24" />
+        <line x2="0" y1="-224" y2="-224" x1="64" />
+        <attrtext style="fontsize:24;fontname:Arial" attrname="PinName" x="72" y="-160" type="pin BEQoBNECTRL" />
+        <line x2="0" y1="-160" y2="-160" x1="64" />
+        <attrtext style="fontsize:24;fontname:Arial" attrname="PinName" x="72" y="-96" type="pin BranchCTRL" />
+        <line x2="0" y1="-96" y2="-96" x1="64" />
+        <attrtext style="fontsize:24;fontname:Arial" attrname="PinName" x="72" y="-32" type="pin ALUwrtCTRL" />
+        <line x2="0" y1="-32" y2="-32" x1="64" />
+        <attrtext style="alignment:RIGHT;fontsize:24;fontname:Arial" attrname="PinName" x="440" y="-1312" type="pin MemDatOut(15:0)" />
+        <rect width="64" x="448" y="-1324" height="24" />
+        <line x2="512" y1="-1312" y2="-1312" x1="448" />
+    </graph>
+</symbol>

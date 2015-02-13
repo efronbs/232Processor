@@ -1,0 +1,10 @@
+Command line:
+   RegFileALU_Schematic_RegFileALU_Schematic_sch_tb_isim_beh.exe
+     -simmode  gui
+     -simrunnum  0
+     -socket  53518
+
+Fri Feb 13 01:31:29 2015
+
+
+ Elaboration Time: 0.0624 sec

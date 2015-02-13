@@ -1,0 +1,8 @@
+[Inputs]
+reset
+[Outputs]
+clk
+[BiDir]
+[ATTRIBUTES]
+VeriModel clockModule
+

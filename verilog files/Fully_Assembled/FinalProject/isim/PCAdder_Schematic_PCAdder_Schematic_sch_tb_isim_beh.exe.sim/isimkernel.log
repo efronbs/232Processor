@@ -1,0 +1,28 @@
+Command line:
+   PCAdder_Schematic_PCAdder_Schematic_sch_tb_isim_beh.exe
+     -simmode  gui
+     -simrunnum  0
+     -socket  50319
+
+Thu Feb 12 19:53:10 2015
+
+
+ Elaboration Time: 0.0624 sec
+
+ Current Memory Usage: 829.239 Meg
+
+ Total Signals          : 19
+ Total Nets             : 61
+ Total Signal Drivers   : 8
+ Total Blocks           : 5
+ Total Primitive Blocks : 3
+ Total Processes        : 11
+ Total Traceable Variables  : 21
+ Total Scalar Nets and Variables : 189
+
+ Total Simulation Time: 0.0624 sec
+
+ Current Memory Usage: 829.239 Meg
+
+Thu Feb 12 19:53:16 2015
+

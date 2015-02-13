@@ -1,0 +1,10 @@
+[Inputs]
+in1
+in2
+ctrlSlct
+[Outputs]
+muxOut
+[BiDir]
+[ATTRIBUTES]
+VeriModel MUX_OneBit_1
+

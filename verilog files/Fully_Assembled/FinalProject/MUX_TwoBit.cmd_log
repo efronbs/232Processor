@@ -1,0 +1,2 @@
+vhdtdtfi -lib work C:/Users/humphrjm/Documents/Xilinx/232FinalProject/FinalProject/MUX_TwoBit.v -lang verilog -prj FinalProject -o MUX_TwoBit.spl -module MUX_TwoBit -template C:/Xilinx/13.4/ISE_DS/ISE//data/splveri.tft -deleteonerror 
+spl2sym -intstyle ise -family spartan3e MUX_TwoBit.spl C:/Users/humphrjm/Documents/Xilinx/232FinalProject/FinalProject/MUX_TwoBit.sym 

@@ -1,0 +1,5 @@
+MODULE doubleclockedMemory
+	SUBMODULE clockDoubler
+		INSTANCE XLXI_18
+	SUBMODULE blockmemory
+		INSTANCE XLXI_19

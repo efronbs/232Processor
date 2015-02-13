@@ -1,0 +1,28 @@
+Command line:
+   PCAdderMuxes_Schematic_PCAdderMuxes_Schematic_sch_tb_isim_beh.exe
+     -simmode  gui
+     -simrunnum  0
+     -socket  52303
+
+Thu Feb 12 23:34:58 2015
+
+
+ Elaboration Time: 0.031201 sec
+
+ Current Memory Usage: 829.243 Meg
+
+ Total Signals          : 39
+ Total Nets             : 146
+ Total Signal Drivers   : 18
+ Total Blocks           : 8
+ Total Primitive Blocks : 6
+ Total Processes        : 25
+ Total Traceable Variables  : 30
+ Total Scalar Nets and Variables : 343
+
+ Total Simulation Time: 0.218401 sec
+
+ Current Memory Usage: 1143.82 Meg
+
+Thu Feb 12 23:35:47 2015
+

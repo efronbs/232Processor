@@ -1,0 +1,2 @@
+sch2hdl -sympath C:/Users/humphrjm/Documents/Xilinx/232FinalProject/FinalProject/ipcore_dir -intstyle ise -family spartan3e -verilog EverythingButALU_Schematic_drc.vf -w C:/Users/humphrjm/Documents/Xilinx/232FinalProject/FinalProject/EverythingButALU_Schematic.sch 
+sch2sym -intstyle ise -family spartan3e -w -refsym EverythingButALU_Schematic C:/Users/humphrjm/Documents/Xilinx/232FinalProject/FinalProject/EverythingButALU_Schematic.sch C:/Users/humphrjm/Documents/Xilinx/232FinalProject/FinalProject/EverythingButALU_Schematic.sym 

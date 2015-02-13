@@ -1,0 +1,5 @@
+sch2hdl -intstyle ise -family spartan3e -verilog RegFileALU_Schematic_drc.vf -w C:/Users/humphrjm/Documents/Xilinx/232FinalProject/FinalProject/RegFileALU_Schematic.sch 
+sch2hdl -intstyle ise -family spartan3e -verilog RegFileALU_Schematic_drc.vf -w C:/Users/humphrjm/Documents/Xilinx/232FinalProject/FinalProject/RegFileALU_Schematic.sch 
+sch2sym -intstyle ise -family spartan3e -w -refsym RegFileALU_Schematic C:/Users/humphrjm/Documents/Xilinx/232FinalProject/FinalProject/RegFileALU_Schematic.sch C:/Users/humphrjm/Documents/Xilinx/232FinalProject/FinalProject/RegFileALU_Schematic.sym 
+sch2hdl -sympath C:/Users/humphrjm/Documents/Xilinx/232FinalProject/FinalProject/ipcore_dir -intstyle ise -family spartan3e -verilog RegFileALU_Schematic_drc.vf -w C:/Users/humphrjm/Documents/Xilinx/232FinalProject/FinalProject/RegFileALU_Schematic.sch 
+sch2sym -intstyle ise -family spartan3e -w -refsym RegFileALU_Schematic C:/Users/humphrjm/Documents/Xilinx/232FinalProject/FinalProject/RegFileALU_Schematic.sch C:/Users/humphrjm/Documents/Xilinx/232FinalProject/FinalProject/RegFileALU_Schematic.sym 

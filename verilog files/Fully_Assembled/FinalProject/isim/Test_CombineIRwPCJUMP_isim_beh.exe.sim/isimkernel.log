@@ -1,0 +1,28 @@
+Command line:
+   Test_CombineIRwPCJUMP_isim_beh.exe
+     -simmode  gui
+     -simrunnum  0
+     -socket  55405
+
+Fri Feb 13 03:51:45 2015
+
+
+ Elaboration Time: 0.0312 sec
+
+ Current Memory Usage: 829.239 Meg
+
+ Total Signals          : 16
+ Total Nets             : 61
+ Total Signal Drivers   : 8
+ Total Blocks           : 3
+ Total Primitive Blocks : 2
+ Total Processes        : 11
+ Total Traceable Variables  : 22
+ Total Scalar Nets and Variables : 205
+
+ Total Simulation Time: 0.0468 sec
+
+ Current Memory Usage: 1143.81 Meg
+
+Fri Feb 13 03:52:36 2015
+

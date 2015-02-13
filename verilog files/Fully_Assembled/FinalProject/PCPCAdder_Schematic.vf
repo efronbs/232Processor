@@ -1,0 +1,60 @@
+////////////////////////////////////////////////////////////////////////////////
+// Copyright (c) 1995-2011 Xilinx, Inc.  All rights reserved.
+////////////////////////////////////////////////////////////////////////////////
+//   ____  ____ 
+//  /   /\/   / 
+// /___/  \  /    Vendor: Xilinx 
+// \   \   \/     Version : 13.4
+//  \   \         Application : sch2hdl
+//  /   /         Filename : PCPCAdder_Schematic.vf
+// /___/   /\     Timestamp : 02/12/2015 19:46:32
+// \   \  /  \ 
+//  \___\/\___\ 
+//
+//Command: sch2hdl -intstyle ise -family spartan3e -verilog C:/Users/humphrjm/Documents/Xilinx/232FinalProject/FinalProject/PCPCAdder_Schematic.vf -w C:/Users/humphrjm/Documents/Xilinx/232FinalProject/FinalProject/PCPCAdder_Schematic.sch
+//Design Name: PCPCAdder_Schematic
+//Device: spartan3e
+//Purpose:
+//    This verilog netlist is translated from an ECS schematic.It can be 
+//    synthesized and simulated, but it should not be modified. 
+//
+`timescale 1ns / 1ps
+
+module PCAdder_Schematic_MUSER_PCPCAdder_Schematic(XLXN_11, 
+                                                   XLXN_12);
+
+    input [15:0] XLXN_11;
+   output [15:0] XLXN_12;
+   
+   wire [15:0] XLXN_10;
+   
+   adder16bit  XLXI_4 (.aIn(XLXN_10[15:0]), 
+                      .bIn(XLXN_11[15:0]), 
+                      .outPin(XLXN_12[15:0]));
+   PCadderConstant  XLXI_5 (.constantOne(XLXN_10[15:0]));
+endmodule
+`timescale 1ns / 1ps
+
+module PCPCAdder_Schematic(XLXN_2, 
+                           XLXN_3, 
+                           XLXN_4, 
+                           XLXN_6);
+
+    input XLXN_2;
+    input XLXN_3;
+    input XLXN_4;
+   output [15:0] XLXN_6;
+   
+   wire [15:0] XLXN_1;
+   wire [15:0] XLXN_6_DUMMY;
+   
+   assign XLXN_6[15:0] = XLXN_6_DUMMY[15:0];
+   PCAdder_Schematic_MUSER_PCPCAdder_Schematic  XLXI_1 (.XLXN_11(XLXN_1[15:0]), 
+                                                       
+         .XLXN_12(XLXN_6_DUMMY[15:0]));
+   register16bit  XLXI_2 (.clk(XLXN_2), 
+                         .dataIn(XLXN_6_DUMMY[15:0]), 
+                         .reset(XLXN_4), 
+                         .write(XLXN_3), 
+                         .dataOut(XLXN_1[15:0]));
+endmodule

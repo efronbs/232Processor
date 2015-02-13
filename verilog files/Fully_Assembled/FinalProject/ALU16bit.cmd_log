@@ -1,0 +1,2 @@
+vhdtdtfi -lib work C:/Users/humphrjm/Documents/Xilinx/232FinalProject/FinalProject/ALU16bit.v -lang verilog -prj FinalProject -o ALU16bit.spl -module ALU16bit -template C:/Xilinx/13.4/ISE_DS/ISE//data/splveri.tft -deleteonerror 
+spl2sym -intstyle ise -family spartan3e -w ALU16bit.spl C:/Users/humphrjm/Documents/Xilinx/232FinalProject/FinalProject/ALU16bit.sym 

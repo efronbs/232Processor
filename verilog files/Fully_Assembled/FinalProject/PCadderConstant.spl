@@ -1,0 +1,7 @@
+[Inputs]
+[Outputs]
+=constantOne[15:0]=
+[BiDir]
+[ATTRIBUTES]
+VeriModel PCadderConstant
+

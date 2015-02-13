@@ -1,0 +1,1 @@
+-intstyle "ise" -incremental -lib "unisims_ver" -lib "unimacro_ver" -lib "xilinxcorelib_ver" -o "C:/Users/humphrjm/Documents/Xilinx/232FinalProject/FinalProject/Test_CombineIRwPCJUMP_isim_beh.exe" -prj "C:/Users/humphrjm/Documents/Xilinx/232FinalProject/FinalProject/Test_CombineIRwPCJUMP_beh.prj" "work.Test_CombineIRwPCJUMP" "work.glbl" 

@@ -1,0 +1,12 @@
+[Inputs]
+reset
+=aluOp[3:0]=
+=aIn[15:0]=
+=bIn[15:0]=
+[Outputs]
+isZero
+=outPut[15:0]=
+[BiDir]
+[ATTRIBUTES]
+VeriModel ALU16bit
+

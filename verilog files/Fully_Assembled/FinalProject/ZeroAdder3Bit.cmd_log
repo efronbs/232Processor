@@ -1,0 +1,2 @@
+vhdtdtfi -lib work C:/Users/humphrjm/Documents/Xilinx/232FinalProject/FinalProject/ZeroAdder3Bit.v -lang verilog -prj FinalProject -o ZeroAdder3Bit.spl -module ZeroAdder3Bit -template C:/Xilinx/13.4/ISE_DS/ISE//data/splveri.tft -deleteonerror 
+spl2sym -intstyle ise -family spartan3e -w ZeroAdder3Bit.spl C:/Users/humphrjm/Documents/Xilinx/232FinalProject/FinalProject/ZeroAdder3Bit.sym 

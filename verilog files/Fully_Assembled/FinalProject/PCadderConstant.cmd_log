@@ -1,0 +1,6 @@
+vhdtdtfi -lib work C:/Users/humphrjm/Documents/Xilinx/232FinalProject/FinalProject/PCadderConstant.v -lang verilog -prj FinalProject -o PCadderConstant.spl -module PCadderConstant -template C:/Xilinx/13.4/ISE_DS/ISE//data/splveri.tft -deleteonerror 
+spl2sym -intstyle ise -family spartan3e PCadderConstant.spl C:/Users/humphrjm/Documents/Xilinx/232FinalProject/FinalProject/PCadderConstant.sym 
+vhdtdtfi -lib work C:/Users/humphrjm/Documents/Xilinx/232FinalProject/FinalProject/PCadderConstant.v -lang verilog -prj FinalProject -o PCadderConstant.spl -module PCadderConstant -template C:/Xilinx/13.4/ISE_DS/ISE//data/splveri.tft -deleteonerror 
+spl2sym -intstyle ise -family spartan3e PCadderConstant.spl C:/Users/humphrjm/Documents/Xilinx/232FinalProject/FinalProject/PCadderConstant.sym 
+vhdtdtfi -lib work C:/Users/humphrjm/Documents/Xilinx/232FinalProject/FinalProject/PCadderConstant.v -lang verilog -prj FinalProject -o PCadderConstant.spl -module PCadderConstant -template C:/Xilinx/13.4/ISE_DS/ISE//data/splveri.tft -deleteonerror 
+spl2sym -intstyle ise -family spartan3e -w PCadderConstant.spl C:/Users/humphrjm/Documents/Xilinx/232FinalProject/FinalProject/PCadderConstant.sym 

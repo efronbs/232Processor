@@ -1,0 +1,10 @@
+[Inputs]
+a
+b
+[Outputs]
+c
+d
+[BiDir]
+[ATTRIBUTES]
+VeriModel test
+

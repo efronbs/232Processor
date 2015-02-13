@@ -1,0 +1,44 @@
+////////////////////////////////////////////////////////////////////////////////
+// Copyright (c) 1995-2011 Xilinx, Inc.  All rights reserved.
+////////////////////////////////////////////////////////////////////////////////
+//   ____  ____ 
+//  /   /\/   / 
+// /___/  \  /    Vendor: Xilinx 
+// \   \   \/     Version : 13.4
+//  \   \         Application : sch2hdl
+//  /   /         Filename : MEMORY_drc.vf
+// /___/   /\     Timestamp : 02/13/2015 03:02:09
+// \   \  /  \ 
+//  \___\/\___\ 
+//
+//Command: C:\Xilinx\13.4\ISE_DS\ISE\bin\nt64\unwrapped\sch2hdl.exe -sympath C:/Users/humphrjm/Documents/Xilinx/232FinalProject/FinalProject/ipcore_dir -intstyle ise -family spartan3e -verilog MEMORY_drc.vf -w C:/Users/humphrjm/Documents/Xilinx/232FinalProject/FinalProject/MEMORY.sch
+//Design Name: MEMORY
+//Device: spartan3e
+//Purpose:
+//    This verilog netlist is translated from an ECS schematic.It can be 
+//    synthesized and simulated, but it should not be modified. 
+//
+`timescale 1ns / 1ps
+
+module MEMORY(ADDR_IN, 
+              CLK, 
+              MemWCTRL, 
+              XLXN_4, 
+              DAT_OUT);
+
+    input [9:0] ADDR_IN;
+    input CLK;
+    input MemWCTRL;
+    input [15:0] XLXN_4;
+   output [15:0] DAT_OUT;
+   
+   wire XLXN_1;
+   
+   block_memory  XLXI_1 (.addra(ADDR_IN[9:0]), 
+                        .clka(XLXN_1), 
+                        .dina(XLXN_4[15:0]), 
+                        .wea(MemWCTRL), 
+                        .douta(DAT_OUT[15:0]));
+   clockDoubler  XLXI_2 (.clkIn(CLK), 
+                        .dClk(XLXN_1));
+endmodule

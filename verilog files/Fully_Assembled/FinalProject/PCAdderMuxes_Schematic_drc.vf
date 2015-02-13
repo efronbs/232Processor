@@ -1,0 +1,65 @@
+////////////////////////////////////////////////////////////////////////////////
+// Copyright (c) 1995-2011 Xilinx, Inc.  All rights reserved.
+////////////////////////////////////////////////////////////////////////////////
+//   ____  ____ 
+//  /   /\/   / 
+// /___/  \  /    Vendor: Xilinx 
+// \   \   \/     Version : 13.4
+//  \   \         Application : sch2hdl
+//  /   /         Filename : PCAdderMuxes_Schematic_drc.vf
+// /___/   /\     Timestamp : 02/12/2015 23:34:07
+// \   \  /  \ 
+//  \___\/\___\ 
+//
+//Command: C:\Xilinx\13.4\ISE_DS\ISE\bin\nt64\unwrapped\sch2hdl.exe -intstyle ise -family spartan3e -verilog PCAdderMuxes_Schematic_drc.vf -w C:/Users/humphrjm/Documents/Xilinx/232FinalProject/FinalProject/PCAdderMuxes_Schematic.sch
+//Design Name: PCAdderMuxes_Schematic
+//Device: spartan3e
+//Purpose:
+//    This verilog netlist is translated from an ECS schematic.It can be 
+//    synthesized and simulated, but it should not be modified. 
+//
+`timescale 1ns / 1ps
+
+module PCAdderMuxes_Schematic(CLK, 
+                              CTRLBRIZ, 
+                              CTRLJUMP, 
+                              IR, 
+                              PCWRT, 
+                              RESET, 
+                              SEIMM, 
+                              PC_IN);
+
+    input CLK;
+    input CTRLBRIZ;
+    input CTRLJUMP;
+    input [15:0] IR;
+    input PCWRT;
+    input RESET;
+    input [15:0] SEIMM;
+   output [15:0] PC_IN;
+   
+   wire [15:0] XLXN_2;
+   wire [15:0] XLXN_19;
+   wire [15:0] XLXN_21;
+   wire [15:0] XLXN_22;
+   wire [15:0] PC_IN_DUMMY;
+   
+   assign PC_IN[15:0] = PC_IN_DUMMY[15:0];
+   register16bit  XLXI_1 (.clk(CLK), 
+                         .dataIn(PC_IN_DUMMY[15:0]), 
+                         .reset(RESET), 
+                         .write(PCWRT), 
+                         .dataOut(XLXN_2[15:0]));
+   adder16bit  XLXI_2 (.aIn(XLXN_21[15:0]), 
+                      .bIn(XLXN_2[15:0]), 
+                      .outPin(XLXN_22[15:0]));
+   PCadderConstant  XLXI_5 (.constantOne(XLXN_19[15:0]));
+   MUX_OneBit  XLXI_7 (.ctrlSlct(CTRLBRIZ), 
+                      .in1(XLXN_19[15:0]), 
+                      .in2(SEIMM[15:0]), 
+                      .muxOut(XLXN_21[15:0]));
+   MUX_OneBit  XLXI_8 (.ctrlSlct(CTRLJUMP), 
+                      .in1(XLXN_22[15:0]), 
+                      .in2(IR[15:0]), 
+                      .muxOut(PC_IN_DUMMY[15:0]));
+endmodule

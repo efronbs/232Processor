@@ -1,0 +1,10 @@
+[Inputs]
+ctrlSlct
+=in1[15:0]=
+=in2[15:0]=
+[Outputs]
+=muxOut[15:0]=
+[BiDir]
+[ATTRIBUTES]
+VeriModel MUX_OneBit
+

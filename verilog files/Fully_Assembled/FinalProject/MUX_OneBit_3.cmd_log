@@ -1,0 +1,2 @@
+vhdtdtfi -lib work C:/Users/humphrjm/Documents/Xilinx/232FinalProject/FinalProject/MUX_OneBit_3.v -lang verilog -prj FinalProject -o MUX_OneBit_3.spl -module MUX_OneBit_3 -template C:/Xilinx/13.4/ISE_DS/ISE//data/splveri.tft -deleteonerror 
+spl2sym -intstyle ise -family spartan3e -w MUX_OneBit_3.spl C:/Users/humphrjm/Documents/Xilinx/232FinalProject/FinalProject/MUX_OneBit_3.sym 

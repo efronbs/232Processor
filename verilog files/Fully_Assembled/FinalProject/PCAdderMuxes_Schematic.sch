@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<drawing version="7">
+    <attr value="spartan3e" name="DeviceFamilyName">
+        <trait delete="all:0" />
+        <trait editname="all:0" />
+        <trait edittrait="all:0" />
+    </attr>
+    <netlist>
+        <signal name="CLK" />
+        <signal name="PCWRT" />
+        <signal name="RESET" />
+        <signal name="XLXN_19(15:0)" />
+        <signal name="SEIMM(15:0)" />
+        <signal name="XLXN_21(15:0)" />
+        <signal name="XLXN_22(15:0)" />
+        <signal name="IR(15:0)" />
+        <signal name="CTRLBRIZ" />
+        <signal name="CTRLJUMP" />
+        <signal name="PC_OUT(15:0)" />
+        <signal name="XLXN_27(15:0)" />
+        <signal name="XLXN_28(15:0)" />
+        <port polarity="Input" name="CLK" />
+        <port polarity="Input" name="PCWRT" />
+        <port polarity="Input" name="RESET" />
+        <port polarity="Input" name="SEIMM(15:0)" />
+        <port polarity="Input" name="IR(15:0)" />
+        <port polarity="Input" name="CTRLBRIZ" />
+        <port polarity="Input" name="CTRLJUMP" />
+        <port polarity="Output" name="PC_OUT(15:0)" />
+        <blockdef name="register16bit">
+            <timestamp>2015-2-13T0:31:4</timestamp>
+            <rect width="288" x="64" y="-256" height="256" />
+            <line x2="0" y1="-224" y2="-224" x1="64" />
+            <line x2="0" y1="-160" y2="-160" x1="64" />
+            <line x2="0" y1="-96" y2="-96" x1="64" />
+            <rect width="64" x="0" y="-44" height="24" />
+            <line x2="0" y1="-32" y2="-32" x1="64" />
+            <rect width="64" x="352" y="-236" height="24" />
+            <line x2="416" y1="-224" y2="-224" x1="352" />
+        </blockdef>
+        <blockdef name="adder16bit">
+            <timestamp>2015-2-12T23:49:19</timestamp>
+            <rect width="64" x="320" y="20" height="24" />
+            <line x2="384" y1="32" y2="32" x1="320" />
+            <rect width="64" x="0" y="-108" height="24" />
+            <line x2="0" y1="-96" y2="-96" x1="64" />
+            <rect width="64" x="0" y="-44" height="24" />
+            <line x2="0" y1="-32" y2="-32" x1="64" />
+            <rect width="256" x="64" y="-128" height="192" />
+        </blockdef>
+        <blockdef name="PCadderConstant">
+            <timestamp>2015-2-13T5:12:51</timestamp>
+            <rect width="64" x="320" y="20" height="24" />
+            <line x2="384" y1="32" y2="32" x1="320" />
+            <rect width="256" x="64" y="-64" height="128" />
+        </blockdef>
+        <blockdef name="MUX_OneBit">
+            <timestamp>2015-2-13T1:50:20</timestamp>
+            <rect width="256" x="64" y="-192" height="192" />
+            <line x2="0" y1="-160" y2="-160" x1="64" />
+            <rect width="64" x="0" y="-108" height="24" />
+            <line x2="0" y1="-96" y2="-96" x1="64" />
+            <rect width="64" x="0" y="-44" height="24" />
+            <line x2="0" y1="-32" y2="-32" x1="64" />
+            <rect width="64" x="320" y="-172" height="24" />
+            <line x2="384" y1="-160" y2="-160" x1="320" />
+        </blockdef>
+        <block symbolname="register16bit" name="XLXI_1">
+            <blockpin signalname="CLK" name="clk" />
+            <blockpin signalname="PCWRT" name="write" />
+            <blockpin signalname="RESET" name="reset" />
+            <blockpin signalname="XLXN_27(15:0)" name="dataIn(15:0)" />
+            <blockpin signalname="PC_OUT(15:0)" name="dataOut(15:0)" />
+        </block>
+        <block symbolname="adder16bit" name="XLXI_2">
+            <blockpin signalname="XLXN_21(15:0)" name="aIn(15:0)" />
+            <blockpin signalname="PC_OUT(15:0)" name="bIn(15:0)" />
+            <blockpin signalname="XLXN_22(15:0)" name="outPin(15:0)" />
+        </block>
+        <block symbolname="PCadderConstant" name="XLXI_5">
+            <blockpin signalname="XLXN_19(15:0)" name="constantOne(15:0)" />
+        </block>
+        <block symbolname="MUX_OneBit" name="XLXI_7">
+            <blockpin signalname="CTRLBRIZ" name="ctrlSlct" />
+            <blockpin signalname="XLXN_19(15:0)" name="in1(15:0)" />
+            <blockpin signalname="SEIMM(15:0)" name="in2(15:0)" />
+            <blockpin signalname="XLXN_21(15:0)" name="muxOut(15:0)" />
+        </block>
+        <block symbolname="MUX_OneBit" name="XLXI_8">
+            <blockpin signalname="CTRLJUMP" name="ctrlSlct" />
+            <blockpin signalname="XLXN_22(15:0)" name="in1(15:0)" />
+            <blockpin signalname="IR(15:0)" name="in2(15:0)" />
+            <blockpin signalname="XLXN_27(15:0)" name="muxOut(15:0)" />
+        </block>
+    </netlist>
+    <sheet sheetnum="1" width="3520" height="2720">
+        <instance x="272" y="528" name="XLXI_1" orien="R0">
+        </instance>
+        <instance x="1552" y="400" name="XLXI_2" orien="R0">
+        </instance>
+        <branch name="PC_OUT(15:0)">
+            <wire x2="768" y1="304" y2="304" x1="688" />
+            <wire x2="768" y1="192" y2="304" x1="768" />
+            <wire x2="1376" y1="192" y2="192" x1="768" />
+            <wire x2="1376" y1="192" y2="368" x1="1376" />
+            <wire x2="1552" y1="368" y2="368" x1="1376" />
+        </branch>
+        <instance x="448" y="144" name="XLXI_5" orien="R0">
+        </instance>
+        <branch name="CLK">
+            <wire x2="272" y1="304" y2="304" x1="144" />
+        </branch>
+        <branch name="PCWRT">
+            <wire x2="272" y1="368" y2="368" x1="144" />
+        </branch>
+        <branch name="RESET">
+            <wire x2="272" y1="432" y2="432" x1="144" />
+        </branch>
+        <iomarker fontsize="28" x="144" y="304" name="CLK" orien="R180" />
+        <iomarker fontsize="28" x="144" y="368" name="PCWRT" orien="R180" />
+        <iomarker fontsize="28" x="144" y="432" name="RESET" orien="R180" />
+        <instance x="2112" y="528" name="XLXI_8" orien="R0">
+        </instance>
+        <instance x="848" y="528" name="XLXI_7" orien="R0">
+        </instance>
+        <branch name="XLXN_19(15:0)">
+            <wire x2="912" y1="272" y2="272" x1="784" />
+            <wire x2="784" y1="272" y2="432" x1="784" />
+            <wire x2="848" y1="432" y2="432" x1="784" />
+            <wire x2="912" y1="176" y2="176" x1="832" />
+            <wire x2="912" y1="176" y2="272" x1="912" />
+        </branch>
+        <branch name="SEIMM(15:0)">
+            <wire x2="848" y1="496" y2="496" x1="768" />
+        </branch>
+        <branch name="XLXN_21(15:0)">
+            <wire x2="1360" y1="368" y2="368" x1="1232" />
+            <wire x2="1360" y1="304" y2="368" x1="1360" />
+            <wire x2="1552" y1="304" y2="304" x1="1360" />
+        </branch>
+        <branch name="XLXN_22(15:0)">
+            <wire x2="2112" y1="432" y2="432" x1="1936" />
+        </branch>
+        <branch name="IR(15:0)">
+            <wire x2="2112" y1="496" y2="496" x1="2032" />
+        </branch>
+        <branch name="CTRLBRIZ">
+            <wire x2="704" y1="592" y2="592" x1="560" />
+            <wire x2="704" y1="368" y2="592" x1="704" />
+            <wire x2="848" y1="368" y2="368" x1="704" />
+        </branch>
+        <branch name="PC_OUT(15:0)">
+            <attrtext style="alignment:SOFT-RIGHT;fontsize:28;fontname:Arial" attrname="Name" x="2752" y="432" type="branch" />
+            <wire x2="2832" y1="432" y2="432" x1="2752" />
+        </branch>
+        <iomarker fontsize="28" x="2832" y="432" name="PC_OUT(15:0)" orien="R0" />
+        <branch name="CTRLJUMP">
+            <wire x2="2112" y1="368" y2="368" x1="2080" />
+        </branch>
+        <iomarker fontsize="28" x="2080" y="368" name="CTRLJUMP" orien="R180" />
+        <iomarker fontsize="28" x="768" y="496" name="SEIMM(15:0)" orien="R180" />
+        <iomarker fontsize="28" x="560" y="592" name="CTRLBRIZ" orien="R180" />
+        <iomarker fontsize="28" x="2032" y="496" name="IR(15:0)" orien="R180" />
+        <branch name="XLXN_27(15:0)">
+            <wire x2="272" y1="496" y2="496" x1="224" />
+            <wire x2="224" y1="496" y2="672" x1="224" />
+            <wire x2="2496" y1="672" y2="672" x1="224" />
+            <wire x2="2512" y1="672" y2="672" x1="2496" />
+            <wire x2="2512" y1="368" y2="368" x1="2496" />
+            <wire x2="2512" y1="368" y2="672" x1="2512" />
+        </branch>
+    </sheet>
+</drawing>

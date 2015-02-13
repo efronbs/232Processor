@@ -1,0 +1,2 @@
+vhdtdtfi -lib work C:/Users/humphrjm/Documents/Xilinx/232FinalProject/FinalProject/ALUcontrol.v -lang verilog -prj FinalProject -o ALUcontrol.spl -module ALUcontrol -template C:/Xilinx/13.4/ISE_DS/ISE//data/splveri.tft -deleteonerror 
+spl2sym -intstyle ise -family spartan3e -w ALUcontrol.spl C:/Users/humphrjm/Documents/Xilinx/232FinalProject/FinalProject/ALUcontrol.sym 

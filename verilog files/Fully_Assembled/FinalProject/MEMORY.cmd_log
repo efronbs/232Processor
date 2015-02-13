@@ -1,0 +1,3 @@
+sch2hdl -sympath C:/Users/humphrjm/Documents/Xilinx/232FinalProject/FinalProject/ipcore_dir -intstyle ise -family spartan3e -verilog MEMORY_drc.vf -w C:/Users/humphrjm/Documents/Xilinx/232FinalProject/FinalProject/MEMORY.sch 
+sch2sym -intstyle ise -family spartan3e -w -refsym MEMORY C:/Users/humphrjm/Documents/Xilinx/232FinalProject/FinalProject/MEMORY.sch C:/Users/humphrjm/Documents/Xilinx/232FinalProject/FinalProject/MEMORY.sym 
+sch2sym -intstyle ise -family spartan3e -w -refsym MEMORY C:/Users/humphrjm/Documents/Xilinx/232FinalProject/FinalProject/MEMORY.sch C:/Users/humphrjm/Documents/Xilinx/232FinalProject/FinalProject/MEMORY.sym 

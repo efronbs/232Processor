@@ -1,0 +1,2 @@
+sch2hdl -intstyle ise -family spartan3e -verilog PCPCAdder_Schematic_drc.vf -w C:/Users/humphrjm/Documents/Xilinx/232FinalProject/FinalProject/PCPCAdder_Schematic.sch 
+sch2sym -intstyle ise -family spartan3e -refsym PCPCAdder_Schematic C:/Users/humphrjm/Documents/Xilinx/232FinalProject/FinalProject/PCPCAdder_Schematic.sch C:/Users/humphrjm/Documents/Xilinx/232FinalProject/FinalProject/PCPCAdder_Schematic.sym 

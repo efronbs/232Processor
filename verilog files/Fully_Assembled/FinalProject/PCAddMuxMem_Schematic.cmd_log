@@ -1,0 +1,3 @@
+sch2sym -intstyle ise -family spartan3e -w -refsym PCAddMuxMem_Schematic C:/Users/humphrjm/Documents/Xilinx/232FinalProject/FinalProject/PCAddMuxMem_Schematic.sch C:/Users/humphrjm/Documents/Xilinx/232FinalProject/FinalProject/PCAddMuxMem_Schematic.sym 
+sch2hdl -sympath C:/Users/humphrjm/Documents/Xilinx/232FinalProject/FinalProject/ipcore_dir -intstyle ise -family spartan3e -verilog PCAddMuxMem_Schematic_drc.vf -w C:/Users/humphrjm/Documents/Xilinx/232FinalProject/FinalProject/PCAddMuxMem_Schematic.sch 
+sch2sym -intstyle ise -family spartan3e -w -refsym PCAddMuxMem_Schematic C:/Users/humphrjm/Documents/Xilinx/232FinalProject/FinalProject/PCAddMuxMem_Schematic.sch C:/Users/humphrjm/Documents/Xilinx/232FinalProject/FinalProject/PCAddMuxMem_Schematic.sym 

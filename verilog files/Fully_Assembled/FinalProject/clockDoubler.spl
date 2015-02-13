@@ -1,0 +1,8 @@
+[Inputs]
+clkIn
+[Outputs]
+dClk
+[BiDir]
+[ATTRIBUTES]
+VeriModel clockDoubler
+
