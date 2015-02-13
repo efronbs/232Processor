@@ -10,13 +10,13 @@
 //
 //
 //////////////////////////////////////////////////////////////////////////////////
-module adder16bit(aIn, bIn, out
+module adder16bit(aIn, bIn, outPin
     );
 	input [15:0] aIn, bIn;
-	output reg [15:0] out;
+	output reg [15:0] outPin;
 
 	always @(aIn, bIn) begin
-		out = aIn + bIn;
+		outPin = aIn + bIn;
 	end
 
 endmodule

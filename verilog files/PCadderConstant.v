@@ -10,8 +10,8 @@
 //
 //
 //////////////////////////////////////////////////////////////////////////////////
-module PCadderConstant(constant
+module PCadderConstant(constantOne
     );
-	output reg [15:0] constant = 1;
+	output reg [15:0] constantOne = 1;
 
 endmodule
