@@ -1,5 +1,0 @@
-MODULE customMem
-	SUBMODULE blockMem
-		INSTANCE XLXI_15
-	SUBMODULE clockDoubler
-		INSTANCE XLXI_16
